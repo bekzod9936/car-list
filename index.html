@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car-List</title>
+    <link rel="shortcut icon" href="./images/Martz90-Hex-Car.ico">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr class="text-center">
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>Country</th>
+                            <th>Square</th>
+                            <th>Population</th>
+                            <th><i class="fas fa-check-square"></i></th>
+                        </tr>
+                        </thead>
+                        <tbody id="countries" class="text-center"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <button class="btn btn-primary" id="list-filling" onclick="listFill()" data-bs-toggle="modal" data-bs-target="#exampleModal">List Filling</button>
+                    <button class="btn btn-primary" id="clearAll" onclick="clearAllF()">Clear All</button>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr class="text-center">
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Color</th>
+                            <th>Price</th>
+                            <th>Made in</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cars" class="text-center">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Fill inputs</h5>
+                <button type="button" class="btn-close" onclick="cancelBtn()" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" maxlength="15" placeholder="Enter car name..." class="form-control d-block">
+                    <label for="position" >Position</label>
+                    <input type="text" id="position" maxlength="15" placeholder="Enter car position..." class="form-control d-block">
+                    <label for="color">Color</label>
+                    <input type="text" id="color" maxlength="10" placeholder="Enter car color..." class="form-control d-block">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" min="0" max="30" placeholder="Enter car price..."  class="form-control d-block">
+                    <label for="madeby" >Made in</label>
+                    <input type="text" id="madeby" maxlength="15" placeholder="Enter country where car is made..." class="form-control d-block">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary btn" id="addCar" onclick="addCar()"  data-bs-dismiss="modal">Add a car</button>
+                <button class="btn-warning btn" id="upDateBtn"  data-bs-dismiss="modal">Update</button>
+                <button class="btn btn-secondary" onclick="cancelBtn()"  data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="fontawesome-free-5.15.2-web/js/all.js"></script>
+<script src="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"></script>
+<script src="js/App.js"></script>
+</body>
+</html>
